@@ -1,25 +1,12 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         
-        hashmap = {}
-        ans = []
-        t = len(nums)
-        for i in range(t):
-            
-            if hashmap.get(nums[i]) == None:
-                hashmap[nums[i]] = [i]
-            else:
-                hashmap[nums[i]].append(i)
+        hashmap= {}
 
-        
-        for i in range(t):
+        for i, num in enumerate(nums):
 
-            to_find = target - nums[i]
+            to_find = target - num
             if hashmap.get(to_find) != None:
-                
-                indices = hashmap.get(to_find)
-                for j in indices:
-
-                    if j != i:
-                        return [i, j]
-        
+                return [hashmap.get(to_find), i]
+            
+            hashmap[num] = i
