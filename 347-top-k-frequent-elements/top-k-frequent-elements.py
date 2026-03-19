@@ -4,12 +4,5 @@ class Solution:
         freqMap = Counter(nums)
         result = []
 
-        sortedByFreq = dict(sorted(freqMap.items(), key = lambda item : item[1], reverse = True))
-
-        for key in sortedByFreq.keys():
-            
-            if len(result) < k:
-                result.append(key)
-            else:
-                break
-        return result
+        sortedByFreq = sorted(freqMap.items(), key = lambda item : item[1], reverse = True)
+        return [num for num, _ in sortedByFreq[:k]]
