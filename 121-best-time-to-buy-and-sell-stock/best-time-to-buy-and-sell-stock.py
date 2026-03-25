@@ -6,7 +6,6 @@ class Solution:
         while sell < len(prices):
 
             transaction = prices[sell] - prices[buy]
-            print(buy, sell, transaction)
             if prices[sell] > prices[buy] and transaction > profit:
                 profit = transaction
             elif prices[sell] < prices[buy]:
