@@ -11,14 +11,8 @@ class Solution:
 
         while(ptr2 != None):
 
-            gcd_num = math.gcd(ptr1.val, ptr2.val)
-            new_node = ListNode(gcd_num, ptr1.next)
-            ptr1.next = new_node
-
+            ptr1.next = ListNode(math.gcd(ptr1.val, ptr2.val), ptr1.next)
             ptr1 = ptr2
             ptr2 = ptr2.next
         
         return head
-
-            
-
