@@ -5,19 +5,9 @@ class Solution:
         x = 0
 
         for operation in operations:
-
-            if not operation[0].isalpha():
-                
-                # pre ops
-                if '-' in operation:
-                    x = (x - 1)
-                else:
-                    x = (x + 1)
+            if '-' in operation:
+                x -= 1
             else:
+                x += 1
 
-                if '-' in operation:
-                    x = x - 1
-                else:
-                    x = x + 1
-            print(x)
         return x
