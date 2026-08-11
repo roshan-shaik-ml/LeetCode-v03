@@ -1,14 +1,14 @@
 class Solution:
     def mapWordWeights(self, words: List[str], weights: List[int]) -> str:
-        
-        ans = ""
+        ans = []
+        append = ans.append
+        weights = weights
+
         for word in words:
             weight = 0
             for char in word:
-                char_ascii = ord(char) - ord('a')
-                weight += weights[char_ascii]
-            
-            modulo = weight % 26
-            ans += chr(ord('z')-modulo)
-        
-        return ans
+                weight += weights[ord(char) - 97]
+
+            append(chr(122 - weight % 26))
+
+        return "".join(ans)
