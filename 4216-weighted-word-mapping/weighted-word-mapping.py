@@ -9,6 +9,6 @@ class Solution:
                 weight += weights[char_ascii]
             
             modulo = weight % 26
-            ans.append(chr(abs(26 - modulo) + ord('a')-1))
+            ans.append(chr(ord('z')-modulo))
         
         return "".join(ans)
